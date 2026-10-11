@@ -21,20 +21,20 @@ Aliases: `/newdir`, `/md`. Running it without a name (or from the command palett
 
 ## Requirements
 
-- OpenCode V2 (`opencode2`) 2.0.26 or newer.
+- OpenCode V2 2.0.26 or newer.
 
 ## Install
 
 Install the plugin from GitHub with the OpenCode CLI:
 
 ```sh
-opencode2 plugin add github:igorovh/opencode-mkdir
+opencode plugin add github:igorovh/opencode-mkdir
 ```
 
 To pin a release, add its tag:
 
 ```sh
-opencode2 plugin add github:igorovh/opencode-mkdir#v0.1.0
+opencode plugin add github:igorovh/opencode-mkdir#v0.1.0
 ```
 
 This adds the plugin to the global `plugins` array in `~/.config/opencode/opencode.jsonc`. Restart the TUI, then run
@@ -52,8 +52,8 @@ You can also add the entry to the config yourself:
 Update or remove it later:
 
 ```sh
-opencode2 plugin update github:igorovh/opencode-mkdir
-opencode2 plugin remove github:igorovh/opencode-mkdir
+opencode plugin update github:igorovh/opencode-mkdir
+opencode plugin remove github:igorovh/opencode-mkdir
 ```
 
 ## Development
