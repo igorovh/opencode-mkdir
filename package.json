@@ -1,0 +1,32 @@
+{
+  "name": "opencode-mkdir",
+  "version": "0.1.0",
+  "description": "OpenCode 2 TUI plugin: /mkdir creates a folder in the current directory and moves the session into it",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./tui": "./src/tui.tsx"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.0.26"
+  },
+  "peerDependencies": {
+    "@opencode/theme": "2.0.26",
+    "@opentui/core": ">=0.5.17",
+    "@opentui/solid": ">=0.5.17",
+    "solid-js": ">=1.9.0"
+  },
+  "devDependencies": {
+    "@opencode/theme": "2.0.26",
+    "@opentui/core": "0.5.17",
+    "@opentui/solid": "0.5.17",
+    "@types/bun": "latest",
+    "solid-js": "1.9.15",
+    "typescript": "5.9.3"
+  }
+}
