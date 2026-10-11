@@ -19,23 +19,63 @@ Aliases: `/newdir`, `/md`. Running it without a name (or from the command palett
 - In a session, the session moves into the new folder (`session.move`). On the Home screen, a new session opens there.
 - Runs locally in the TUI; nothing is sent to the model.
 
-## Install locally
+## Requirements
+
+- OpenCode V2 (`opencode2`) 2.0.26 or newer.
+
+## Install
+
+Install the plugin from GitHub with the OpenCode CLI:
 
 ```sh
-bun install
+opencode2 plugin add github:igorovh/opencode-mkdir
 ```
 
-Add the project directory to `plugins` in `~/.config/opencode/opencode.jsonc`, then restart the TUI:
+To pin a release, add its tag:
+
+```sh
+opencode2 plugin add github:igorovh/opencode-mkdir#v0.1.0
+```
+
+This adds the plugin to the global `plugins` array in `~/.config/opencode/opencode.jsonc`. Restart the TUI, then run
+`/mkdir`.
+
+You can also add the entry to the config yourself:
 
 ```jsonc
 {
-  "plugins": ["E:/Projekty/WebstormProjects/opencode-mkdir"]
+  "$schema": "https://opencode.ai/config.json",
+  "plugins": ["github:igorovh/opencode-mkdir"]
 }
+```
+
+Update or remove it later:
+
+```sh
+opencode2 plugin update github:igorovh/opencode-mkdir
+opencode2 plugin remove github:igorovh/opencode-mkdir
 ```
 
 ## Development
 
+Requires [Bun](https://bun.sh).
+
 ```sh
+git clone https://github.com/igorovh/opencode-mkdir.git
+cd opencode-mkdir
+bun install
 bun test
 bun run typecheck
 ```
+
+To run your checkout instead of the published plugin, put its path in `plugins` and restart the TUI:
+
+```jsonc
+{
+  "plugins": ["/path/to/opencode-mkdir"]
+}
+```
+
+## License
+
+[MIT](LICENSE)

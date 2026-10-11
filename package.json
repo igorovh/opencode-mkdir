@@ -2,8 +2,32 @@
   "name": "opencode-mkdir",
   "version": "0.1.0",
   "description": "OpenCode TUI plugin: /mkdir creates a folder in the current directory and moves the session into it",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-v2",
+    "tui",
+    "mkdir"
+  ],
+  "license": "MIT",
+  "author": "igorovh",
+  "homepage": "https://github.com/igorovh/opencode-mkdir#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorovh/opencode-mkdir.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igorovh/opencode-mkdir/issues"
+  },
   "type": "module",
   "private": true,
+  "files": [
+    "index.ts",
+    "tui.ts",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": "./src/index.ts",
     "./tui": "./src/tui.tsx"
