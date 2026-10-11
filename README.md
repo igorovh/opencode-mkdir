@@ -2,6 +2,8 @@
 
 An OpenCode TUI plugin that adds `/mkdir`: create a folder in the current directory and move the session into it.
 
+> Supports OpenCode V2 only (built against `@opencode/plugin` 2.0.26). V1 is not supported.
+
 ## Usage
 
 ```text
