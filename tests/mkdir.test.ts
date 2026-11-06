@@ -29,6 +29,10 @@ describe("resolveTarget", () => {
     expect(resolveTarget(base, name).ok).toBe(false)
   })
 
+  test("accepts names that only start with two dots", () => {
+    expect(resolveTarget(base, "..cache")).toEqual({ ok: true, path: path.join(base, "..cache") })
+  })
+
   test("rejects absolute paths on any platform", () => {
     expect(resolveTarget(base, "/etc").ok).toBe(false)
     expect(resolveTarget(base, "C:\\x").ok).toBe(false)
@@ -58,5 +62,16 @@ describe("createDirectory", () => {
 
     await writeFile(path.join(root, "file"), "")
     await expect(createDirectory(path.join(root, "file"))).rejects.toThrow("file with this name")
+  })
+
+  test("reports a file in the way of a nested path", async () => {
+    await writeFile(path.join(root, "file"), "")
+    await expect(createDirectory(path.join(root, "file", "sub"))).rejects.toThrow("A file is in the way")
+  })
+
+  test("only one of two concurrent calls creates the folder", async () => {
+    const target = path.join(root, "race")
+    const results = await Promise.allSettled([createDirectory(target), createDirectory(target)])
+    expect(results.filter((result) => result.status === "fulfilled")).toHaveLength(1)
   })
 })
