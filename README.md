@@ -9,8 +9,8 @@ directory and move the session into it, without leaving the prompt.
   <img src="docs/demo.gif" alt="Creating a folder with /mkdir from the Home screen and with /md inside a session" width="1000">
 </p>
 
-The demo shows `/mkdir my-app` on the Home screen, which opens a new session in the new folder, then `/md` without a
-name inside that session, which asks for one and moves the session.
+The demo shows `/mkdir web-app` on the Home screen, which opens a new session in the new folder, then `/md` without a
+name inside that session, which asks for one and moves the session into `notes`.
 
 ## Features
 
@@ -96,7 +96,8 @@ OpenCode reloads the plugin whenever a file changes.
 }
 ```
 
-To record the demo again, install [VHS](https://github.com/charmbracelet/vhs) and run `vhs docs/demo.tape`.
+To record the demo again, install [VHS](https://github.com/charmbracelet/vhs) and run `vhs docs/demo.tape`. The
+tape's header lists the environment variables it reads.
 
 ## License
 
