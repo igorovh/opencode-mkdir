@@ -4,15 +4,13 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "moduleDetection": "force",
-    "jsx": "preserve",
-    "jsxImportSource": "@opentui/solid",
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "types": ["bun"],
-    "lib": ["ES2023", "DOM"]
+    "lib": ["ES2023"]
   },
-  "include": ["*.ts", "src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts"]
+  "include": ["*.ts", "src/**/*.ts", "tests/**/*.ts"]
 }
