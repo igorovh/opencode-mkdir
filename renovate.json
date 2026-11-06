@@ -1,12 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+  "dependencyDashboard": true,
+  "platformAutomerge": true,
+  "automergeType": "pr",
+  "rebaseWhen": "behind-base-branch",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": ["before 6am on monday"]
+  },
   "packageRules": [
     {
-      "description": "Keep the plugin API types in step with the OpenCode release they target.",
-      "matchPackageNames": ["@opencode/**"],
-      "matchDepTypes": ["devDependencies"],
-      "groupName": "OpenCode"
+      "description": "Merge every update on green CI; the branch ruleset keeps red majors out.",
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "description": "Keep the host packages in step with the OpenCode release they target.",
+      "matchPackageNames": ["@opencode/**", "@opentui/**", "solid-js"],
+      "groupName": "OpenCode host packages"
     },
     {
       "description": "The peer range is the minimum supported OpenCode version; raise it by hand.",
